@@ -28,7 +28,7 @@
 
 
 
-
+<form method="POST" action="{{ url('edit') }}">
     <div class="row mb-4">
         <div class="col-md-6">
             <div class="card">
@@ -42,11 +42,11 @@
 
 
                                 <div class="legends">
-
+                                    @foreach ($items as $item)
                                     <div class="legend d-flex flex-row align-items-center">
-                                        <div class='w-3 h-3 rounded-full bg-info mr-2'></div><span class='text-xs'></span>
+                                        <div class='w-3 h-3 rounded-full bg-info mr-2'></div><span class='text-xs'>{{$item->name}}</span>
                                     </div>
-
+                                    @endforeach
 
 
                                 </div>
@@ -60,49 +60,8 @@
             </div>
 
         </div>
+    </form>
 
-        <div class="col-12 col-md-3">
-            <div class="card card-statistic">
-                <div class="card-body p-0">
-                    <div class="d-flex flex-column">
-                        <div class='px-3 py-3 d-flex justify-content-between'>
-                            <h3 class='card-title'>Total Customers <br> <br>
-
-
-
-                        </h3>
-                            <div class="card-right d-flex align-items-center">
-                            </div>
-
-                        </div>
-                        <div class="chart-wrapper">
-                            <canvas id="canvas1" style="height:100px !important"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-12 col-md-3">
-            <div class="card card-statistic">
-                <div class="card-body p-0">
-                    <div class="d-flex flex-column">
-                        <div class='px-3 py-3 d-flex justify-content-between'>
-                            <h3 class='card-title'>Totle Items
-                                <br><br>
-
-                            </h3>
-                            <div class="card-right d-flex align-items-center">
-
-                            </div>
-                        </div>
-                        <div class="chart-wrapper">
-                            <canvas id="canvas3" style="height:100px !important"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
     </div>

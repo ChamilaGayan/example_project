@@ -15,13 +15,6 @@ class ItemController extends Controller
 
     public function post(Request $request)
     {
-        // Item::create([
-        //     'user_id' =>auth()->user()->id,
-        //     'name' => $request->name,
-        //     'image' => $request->image,
-        //     'price' => $request->price,
-        //     'status' => $request->options
-        // ]);
 
         if($request->hasFile('image')){
             $filename = $request->image->getClientOriginalName();
@@ -59,6 +52,13 @@ class ItemController extends Controller
         $item->status = $request->input('options');
         $item->update();
         return redirect()->back()->with('status','Item Update Successfully');
+    }
+
+    public function deleteItem($id)
+    {
+        $item = Item::find($id);
+        $item->delete();
+        return view('updateitem', compact('item'));
     }
 
 }

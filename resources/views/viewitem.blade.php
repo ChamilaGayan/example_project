@@ -75,16 +75,6 @@
                         <td>{{$item->status}}</td>
                         <td>{{date('Y-m-d', strtotime($item->updated_at))}}</td>
                         <td><a href="{{ url('edit/').$item->id }}" class="btn btn-primary btn-sm">View Item</a></td>
-
-                        {{-- @if ($book->status == '0')
-                        <td><label class="badge badge-success">Available</label></td>
-                        <input type="hidden" name="id" value="{{$book->id}}" class="form-control">
-                        <input type="hidden" name="stat" value="1" class="form-control">
-                        <td><a href="{{ url('edit-book/'.$book->id) }}" class="btn btn-success btn-sm">Buy Book</a></td>
-                        @else
-                        <td><label class="badge badge-warning">Purchased</label></td>
-                        <td><a href="{{ url('edit-book/'.$book->id) }}" class="btn btn-primary btn-sm">View Book</a></td>
-                        @endif --}}
                         </tr>
 
                       @endforeach

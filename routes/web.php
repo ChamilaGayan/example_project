@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
+
+
+
+
 
 Auth::routes();
 
@@ -25,3 +29,4 @@ Route::post('/post', [App\Http\Controllers\ItemController::class, 'post'])->name
 Route::get('/view', [App\Http\Controllers\ItemController::class, 'viewItem'])->name('view');
 Route::put('/itemupdate{id}', [App\Http\Controllers\ItemController::class, 'itemUpdate']);
 Route::any('/edit{id}', [App\Http\Controllers\ItemController::class, 'updateItem']);
+Route::any('/delete{id}', [App\Http\Controllers\ItemController::class, 'deleteItem']);

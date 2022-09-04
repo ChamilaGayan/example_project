@@ -94,7 +94,10 @@
 
                                     <div class="col-sm-12 d-flex justify-content-end">
                                         <button type="submit" name="update" class="btn btn-primary mr-1 mb-1" onClick="return confirm('Do you want to update this form?')">Update</button>
-                                        <button type="submit" name="delete" class="btn btn-danger mr-1 mb-1" onClick="return confirm('Do you want to delete this user?')">Delete</button>
+
+                                        <a href="{{ url('delete/').$item->id }}" class="btn btn-danger mr-1 mb-1" onClick="return confirm('Do you want to delete this user?')">Delete</a>
+
+                                        {{-- <button type="submit" name="delete" class="btn btn-danger mr-1 mb-1" onClick="return confirm('Do you want to delete this user?')">Delete</button> --}}
                                         <button type="reset" class="btn btn-light-secondary mr-1 mb-1" onClick="return confirm('Do you want to reset this form?')">Reset</button>
                                     </div>
                                     </div>
