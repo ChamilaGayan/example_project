@@ -17,16 +17,15 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-
-
-
-
 Auth::routes();
 
+// company
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/item', [App\Http\Controllers\ItemController::class, 'addItem'])->name('item');
-Route::post('/post', [App\Http\Controllers\ItemController::class, 'post'])->name('post');
-Route::get('/view', [App\Http\Controllers\ItemController::class, 'viewItem'])->name('view');
-Route::put('/itemupdate{id}', [App\Http\Controllers\ItemController::class, 'itemUpdate']);
-Route::any('/edit{id}', [App\Http\Controllers\ItemController::class, 'updateItem']);
-Route::any('/delete{id}', [App\Http\Controllers\ItemController::class, 'deleteItem']);
+Route::get('/company', [App\Http\Controllers\CompanyController::class, 'addPage'])->name('company');
+Route::get('/view-company', [App\Http\Controllers\CompanyController::class, 'viewPage'])->name('view.company');
+Route::put('/company-edit{id}', [App\Http\Controllers\CompanyController::class, 'editPage']);
+Route::post('/add-company', [App\Http\Controllers\CompanyController::class, 'addCompany'])->name('add.company');
+Route::any('/update-company{id}', [App\Http\Controllers\CompanyController::class, 'companyUpdate']);
+Route::any('/delete-company{id}', [App\Http\Controllers\CompanyController::class, 'companyDelete']);
+
+//emplyee

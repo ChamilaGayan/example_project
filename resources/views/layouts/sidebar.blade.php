@@ -17,17 +17,39 @@
             <li class="sidebar-item  has-sub">
                 <a href="#" class='sidebar-link'>
                     <i data-feather="file-text" width="20"></i>
-                    <span>Item</span>
+                    <span>Companies</span>
                 </a>
 
                 <ul class="submenu ">
 
                     <li>
-                        <a href="{{ route ('item') }}">Add Item</a>
+                        <a href="{{ route ('company') }}">Add Company</a>
                     </li>
 
                     <li>
-                        <a href="{{ route ('view') }}">View Item</a>
+                        <a href="{{ route ('view.company') }}">View Companies</a>
+                    </li>
+
+
+                </ul>
+
+            </li>
+
+
+            <li class="sidebar-item  has-sub">
+                <a href="#" class='sidebar-link'>
+                    <i data-feather="file-text" width="20"></i>
+                    <span>Emplyees</span>
+                </a>
+
+                <ul class="submenu ">
+
+                    <li>
+                        <a href="">Add Emplyee</a>
+                    </li>
+
+                    <li>
+                        <a href="">View Emplyees</a>
                     </li>
 
 

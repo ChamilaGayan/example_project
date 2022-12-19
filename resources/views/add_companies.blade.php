@@ -6,7 +6,7 @@
         <div id="sidebar" class='active'>
             <div class="sidebar-wrapper active">
     <div class="sidebar-header">
-        <h2>Product</h2>
+        <h2>Admin Panel</h2>
     </div>
     @include('layouts.sidebar')
     <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
@@ -47,7 +47,7 @@
                     <h6 class="alert alert-success">{{ session('status') }}</h6>
                 @endif
 
-<form action="{{route('post')}}" name="11" method="POST" class="contact-form" enctype="multipart/form-data">
+<form action="{{route('add.company')}}" name="11" method="POST" class="contact-form" enctype="multipart/form-data">
     @csrf
                 <div class="form-body">
                     <div class="row">

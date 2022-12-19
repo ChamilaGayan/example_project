@@ -4,7 +4,7 @@
             <p>2022</p>
         </div>
         <div class="float-right">
-            <p>Product <span class='text-danger'></p>
+            <p>Admin Panel <span class='text-danger'></p>
         </div>
     </div>
 </footer>

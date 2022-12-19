@@ -5,7 +5,7 @@
     <div id="sidebar" class='active'>
         <div class="sidebar-wrapper active">
 <div class="sidebar-header">
-    <H2>Product</H2>
+    <H2>Admin Panel</H2>
 </div>
 
 @include('layouts.sidebar')
@@ -28,12 +28,12 @@
 
 
 
-<form method="POST" action="{{ url('edit') }}">
+<form method="POST" action="">
     <div class="row mb-4">
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h3 class='card-heading p-1 pl-3'>Totaly Added Items</h3>
+                    <h3 class='card-heading p-1 pl-3'>Totaly Added Companies</h3>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -42,11 +42,41 @@
 
 
                                 <div class="legends">
-                                    @foreach ($items as $item)
+                                    {{-- @foreach ($items as $item) --}}
                                     <div class="legend d-flex flex-row align-items-center">
-                                        <div class='w-3 h-3 rounded-full bg-info mr-2'></div><span class='text-xs'>{{$item->name}}</span>
+                                        <div class='w-3 h-3 rounded-full bg-info mr-2'></div><span class='text-xs'>aaaa</span>
                                     </div>
-                                    @endforeach
+                                    {{-- @endforeach --}}
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-12">
+                            <canvas id="bar"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class='card-heading p-1 pl-3'>Totaly Added Emplyees</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-4 col-12">
+                            <div class="pl-3">
+
+
+                                <div class="legends">
+                                    {{-- @foreach ($items as $item) --}}
+                                    <div class="legend d-flex flex-row align-items-center">
+                                        <div class='w-3 h-3 rounded-full bg-info mr-2'></div><span class='text-xs'>aaaa</span>
+                                    </div>
+                                    {{-- @endforeach --}}
 
 
                                 </div>
