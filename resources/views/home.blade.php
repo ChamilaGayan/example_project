@@ -97,11 +97,11 @@
     </div>
 </section>
 </div>
-@include('layouts.footer')
+
 
     </div>
 </div>
-
+@include('layouts.footer')
 
 
 <script src="js/feather-icons/feather.min.js"></script>

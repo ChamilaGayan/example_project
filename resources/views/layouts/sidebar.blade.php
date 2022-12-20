@@ -45,11 +45,11 @@
                 <ul class="submenu ">
 
                     <li>
-                        <a href="">Add Emplyee</a>
+                        <a href="{{ route ('employee') }}">Add Emplyee</a>
                     </li>
 
                     <li>
-                        <a href="">View Emplyees</a>
+                        <a href="{{ route ('view.employee') }}">View Emplyees</a>
                     </li>
 
 
