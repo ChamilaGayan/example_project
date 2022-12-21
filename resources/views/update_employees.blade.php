@@ -39,7 +39,6 @@
             <div class="card-header">
             </div>
             <div class="card-content">
-        <img class="" src="{{asset('/storage/images/'.$item->image)}}" alt="." style="width: 150px;height: 150px; padding: 10px; margin: 0px; ">
 
             <div class="card-body">
 
@@ -49,66 +48,68 @@
                 @endif
 
                 <!-- update -->
-                <form action="{{ url('itemupdate'.$item->id) }}" name="11" method="POST" class="contact-form" enctype="multipart/form-data">
+                <form action="{{url('update-employee'.$employee->id)}}" name="11" method="POST" class="contact-form" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
-                                <div class="form-body">
-                                    <div class="row">
+                    <div class="form-body">
+                        <div class="row">
 
-                                    <div class="col-md-2">
-                                        <label>Item Name</label>
-                                    </div>
-                                    <div class="col-md-4 form-group">
-                                        <input type="text" id="contact-info" class="form-control" name="name" placeholder="Name" value="{{$item->name}}">
-                                    </div>
+                        <div class="col-md-2">
+                            <label>Full Name</label>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="text" id="contact-info" class="form-control" name="full_name" value="{{ $employee->full_name }}">
+                        </div>
 
-                                    <div class="col-md-2">
-                                        <label>Price</label>
-                                    </div>
-                                    <div class="col-md-4 form-group">
-                                        <input type="text" id="contact-info" class="form-control" name="price" placeholder="Price" value="{{$item->price}}">
-                                    </div>
 
-                                    <div class="col-md-2">
-                                        <label>Status</label>
-                                    </div>
+                        <div class="col-md-2">
+                            <label>Nick Name</label>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="text" id="contact-info" class="form-control" name="nick_name" value="{{ $employee->nick_name }}">
+                        </div>
 
-                                    <div class="col-md-4 form-group">
+                        <div class="col-md-2">
+                            <label>Company</label>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <select class="form-select" aria-label="Default select example" name="company">
+                                <option value="{{ $employee->company }}">{{ $employee->company }}</option>
+    @foreach ($companies as $company)
+    <option value="{{ $company->company_name }}">{{ $company->company_name }}</option>
+    @endforeach
+                              </select>
 
-                                        <div class="btn-group">
-                                            <input type="radio" class="btn-check" name="options" id="option1" value="active" autocomplete="off" checked />
-                                            <label class="btn btn-success" for="option1">Active</label>
+                        </div>
 
-                                            <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off" value="inactive"/>
-                                            <label class="btn btn-success" for="option2">Inactive</label>
+                        <div class="col-md-2">
+                            <label>Email</label>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="email" class="form-control" name="email" id="email" value="{{ $employee->email }}">
+                        </div>
 
-                                          </div>
-                                    </div>
+                        <div class="col-md-2">
+                            <label>Phone</label>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="text" class="form-control" name="phone" id="phone" value="{{ $employee->phone }}">
+                        </div>
 
-                                    <div class="col-md-2">
-                                        <label>Date</label>
-                                    </div>
-                                    <div class="col-md-4 form-group">
-                                        <label >{{date('Y-m-d', strtotime($item->updated_at))}}</label>
-                                    </div>
+                        <div class="col-md-2">
+                            <label>Position</label>
+                        </div>
+                        <div class="col-md-4 form-group">
+                            <input type="text" class="form-control" name="position" id="position" value="{{ $employee->position }}">
+                        </div>
 
-                                    <div class="col-sm-12 d-flex justify-content-end">
-                                        <button type="submit" name="update" class="btn btn-primary mr-1 mb-1" onClick="return confirm('Do you want to update this form?')">Update</button>
-
-                                        <a href="{{ url('delete/').$item->id }}" class="btn btn-danger mr-1 mb-1" onClick="return confirm('Do you want to delete this user?')">Delete</a>
-
-                                        {{-- <button type="submit" name="delete" class="btn btn-danger mr-1 mb-1" onClick="return confirm('Do you want to delete this user?')">Delete</button> --}}
-                                        <button type="reset" class="btn btn-light-secondary mr-1 mb-1" onClick="return confirm('Do you want to reset this form?')">Reset</button>
-                                    </div>
-                                    </div>
-                                </div>
-
+                        <div class="col-sm-12 d-flex justify-content-end">
+                            <button type="submit" name="update" class="btn btn-primary mr-1 mb-1" onClick="return confirm('Do you want to update this employee?')">Update</button>
+                            <a href="{{ url('delete-employee/').$employee->id }}" class="btn btn-danger mr-1 mb-1" onClick="return confirm('Do you want to delete this employee?')">Delete</a>
+                            <button type="reset" class="btn btn-light-secondary mr-1 mb-1" onClick="return confirm('Do you want to reset this form?')">Reset</button>
+                        </div>
+                        </div>
+                    </div>
                                 </form>
-
-
-
-
-
             </div>
             </div>
         </div>

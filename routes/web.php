@@ -35,3 +35,5 @@ Route::get('/employee-edit{id}', [App\Http\Controllers\EmployeeController::class
 Route::post('/add-employee', [App\Http\Controllers\EmployeeController::class, 'addemployee'])->name('add.employee');
 Route::any('/update-employee{id}', [App\Http\Controllers\EmployeeController::class, 'employeeUpdate']);
 Route::any('/delete-employee{id}', [App\Http\Controllers\EmployeeController::class, 'employeeDelete']);
+
+Route::post('contact-us', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.us.store');

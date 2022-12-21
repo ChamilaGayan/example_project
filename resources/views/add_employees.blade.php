@@ -57,6 +57,11 @@
                     </div>
                     <div class="col-md-4 form-group">
                         <input type="text" id="contact-info" class="form-control" name="full_name" placeholder="Full Name">
+                        <span class="text-danger">
+                            @if ( $errors->has('full_name') )
+                                {{ $errors->first('full_name') }}
+                            @endif
+                          </span>
                     </div>
 
 
@@ -65,13 +70,26 @@
                     </div>
                     <div class="col-md-4 form-group">
                         <input type="text" id="contact-info" class="form-control" name="nick_name" placeholder="Nick Name">
+                        <span class="text-danger">
+                            @if ( $errors->has('nick_name') )
+                                {{ $errors->first('nick_name') }}
+                            @endif
+                          </span>
                     </div>
 
                     <div class="col-md-2">
                         <label>Company</label>
                     </div>
                     <div class="col-md-4 form-group">
-                        <input type="text" id="contact-info" class="form-control" name="telephone" placeholder="Telephone">
+                        <select class="form-select" aria-label="Default select example" name="company">
+                            <option value="">Select Company</option>
+@foreach ($companies as $company)
+<option value="{{ $company->company_name }}">{{ $company->company_name }}</option>
+@endforeach
+
+
+                          </select>
+                        {{-- <input type="text" id="contact-info" class="form-control" name="telephone" placeholder="Telephone"> --}}
                     </div>
 
                     <div class="col-md-2">

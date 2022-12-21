@@ -42,11 +42,11 @@
 
 
                                 <div class="legends">
-                                    {{-- @foreach ($items as $item) --}}
+                                    @foreach ($companies as $company)
                                     <div class="legend d-flex flex-row align-items-center">
-                                        <div class='w-3 h-3 rounded-full bg-info mr-2'></div><span class='text-xs'>aaaa</span>
+                                        <div class='w-3 h-3 rounded-full bg-info mr-2'></div><span class='text-xs'>{{ $company->company_name }}</span>
                                     </div>
-                                    {{-- @endforeach --}}
+                                    @endforeach
 
 
                                 </div>
@@ -72,11 +72,11 @@
 
 
                                 <div class="legends">
-                                    {{-- @foreach ($items as $item) --}}
+                                    @foreach ($employees as $employee)
                                     <div class="legend d-flex flex-row align-items-center">
-                                        <div class='w-3 h-3 rounded-full bg-info mr-2'></div><span class='text-xs'>aaaa</span>
+                                        <div class='w-3 h-3 rounded-full bg-info mr-2'></div><span class='text-xs'>{{ $employee->full_name }}</span>
                                     </div>
-                                    {{-- @endforeach --}}
+                                    @endforeach
 
 
                                 </div>

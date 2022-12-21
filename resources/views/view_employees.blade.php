@@ -44,34 +44,24 @@
                                     <table class="table align-items-center table-flush table-hover" id="dataTableHover">
                                         <thead class="thead-light">
                                           <tr>
-                                            <th>Nic</th>
-                                            <th>Patient Name</th>
                                             <th>Date</th>
-                                            <th>Time</th>
-                                            <th>Doctor</th>
+                                            <th>Name</th>
+                                            <th>Contact</th>
+                                            <th>Position</th>
                                             <th>Action</th>
                                           </tr>
                                         </thead>
 
                                         <tbody>
-                                            {{-- @foreach ($companies as $company) --}}
+                                            @foreach ($employees as $employee)
                                           <tr>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>a</td>
-                                            <td>
-                                                {{-- @if ($appointment->status == 0)
-                                                <a href="{{ route ('update.appointment', $appointment->id) }}" class="btn btn-icon btn-pills btn-soft-success" onClick="return confirm('Confirm Appointment ?')"><i class="uil uil-check"></i></a>
-                                                <a href="{{ route ('delete.appointment', $appointment->id) }}" class="btn btn-icon btn-pills btn-soft-danger" onClick="return confirm('Close Appointment ?')"><i class="uil uil-times"></i></a>
-
-                                                @else --}}
-                                                <span class="badge bg-soft-success">Approved</span>
-                                                {{-- @endif --}}
-                                            </td>
+                                            <td>{{date('Y-m-d', strtotime($employee->updated_at))}}</td>
+                                            <td>{{$employee->full_name}}</td>
+                                            <td>{{$employee->phone}}</td>
+                                            <td>{{$employee->position}}</td>
+                                            <td><a href="{{ url('employee-edit/').$employee->id }}" class="btn btn-primary btn-sm">View</a></td>
                                           </tr>
-                                          {{-- @endforeach --}}
+                                          @endforeach
 
                                         </tbody>
                                       </table>
